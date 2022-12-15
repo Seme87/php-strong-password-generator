@@ -6,7 +6,7 @@
 
     // var_dump($number_password);
 
-    function randomPassword() {
+    function randomPassword($int) {
     $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789&%&£";
     $pass = array(); //remember to declare $pass as an array
     $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
@@ -15,9 +15,9 @@
         $pass[] = $alphabet[$n];
     }
     return implode($pass); //turn the array into a string
-}
+    }
 
-echo randomPassword();
+    
 
 ?>
 
@@ -38,5 +38,9 @@ echo randomPassword();
        <input type="number" name="number" min="4" max="12" id="numero-password" required>
        <button type="submit">invia</button>
     </form>
+
+    <h3>Password Generata</h3>
+    <h5> <?php echo randomPassword($int) ?> </h5>
+    
 </body>
 </html>
